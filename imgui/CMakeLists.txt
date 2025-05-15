@@ -2,7 +2,6 @@ add_library(imgui STATIC
     imconfig.h
     imgui.cpp
     imgui.h
-    imgui_demo.cpp
     imgui_draw.cpp
     imgui_impl_glfw.cpp
     imgui_impl_glfw.h
@@ -18,3 +17,8 @@ add_library(imgui STATIC
 )
 
 target_link_libraries(imgui PUBLIC glfw libglew_static)
+target_include_directories(imgui
+    PUBLIC
+    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
+    "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
+)
