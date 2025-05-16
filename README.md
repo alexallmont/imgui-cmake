@@ -8,6 +8,6 @@ Minimal GUI app that automatically pulls [Dear ImGui](https://github.com/ocornut
     cmake --build build
 ```
 
-See `imgui/CMakeLists.txt` for reference. For now this is hardcoded to the GLFW backend, but main.cpp still includes some code for other build targets as it's a cut-down version of original Dear ImGui example.
+See `imgui/CMakeLists.txt` for reference. For now this is hardcoded to the GLFW backend. `main.cpp` is a cut-down version of the GLFW example in the Dear ImGui repo.
 
 ![screenshot](screenshot.png)
