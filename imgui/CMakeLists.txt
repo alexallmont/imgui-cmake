@@ -16,7 +16,7 @@ add_library(imgui STATIC
     imstb_truetype.h
 )
 
-target_link_libraries(imgui PUBLIC glfw libglew_static)
+target_link_libraries(imgui PUBLIC glfw OpenGL::GL)
 target_include_directories(imgui
     PUBLIC
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"

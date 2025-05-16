@@ -1,8 +1,11 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.11)
 
 project(mygui)
 
-# Get GLFW and GLEW
+set(CMAKE_CXX_STANDARD 17)
+
+find_package(OpenGL REQUIRED)
+
 include(FetchContent)
 FetchContent_Declare (
     glfw
@@ -13,18 +16,8 @@ set(GLFW_BUILD_DOCS OFF CACHE BOOL "")
 set(GLFW_INSTALL OFF CACHE BOOL "")
 FetchContent_MakeAvailable(glfw)
 
-FetchContent_Declare(
-  glew
-  GIT_REPOSITORY https://github.com/Perlmint/glew-cmake.git
-  GIT_TAG        origin/master
-)
-FetchContent_GetProperties(glew)
-FetchContent_MakeAvailable(glew)
-
-# Build custom static imgui for this project
 add_subdirectory(imgui)
 
-# Add main app
 add_executable(mygui
     main.cpp
 )
