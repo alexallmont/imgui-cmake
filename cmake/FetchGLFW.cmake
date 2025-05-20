@@ -10,4 +10,8 @@ FetchContent_Declare(
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "")
 set(GLFW_INSTALL OFF CACHE BOOL "")
 
+if(APPLE)
+    add_compile_definitions(GL_SILENCE_DEPRECATION)
+endif()
+
 FetchContent_MakeAvailable(glfw)
